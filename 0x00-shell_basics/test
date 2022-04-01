@@ -1,0 +1,18 @@
+o '#!/bin/bash' >> 11-lists
+echo '#!/bin/bash' >> 12-file_type
+echo '#!/bin/bash' >> 13-symbolic_link
+echo '#!/bin/bash' >> 14-copy_html
+
+echo 'ls -la . .. /boot' >> 11-lists
+echo 'file /tmp/iamafile' >> 12-file_type
+echo 'ln -s /bin/ls __ls__' >> 13-symbolic_link
+echo 'cp -nu *.html ..' >> 14-copy_html
+
+chmod u+x 11-lists
+chmod u+x 12-file_type
+chmod u+x 13-symbolic_link
+chmod u+x 14-copy_html
+
+git add .
+git commit -m "11 to 14 basics"
+git push
