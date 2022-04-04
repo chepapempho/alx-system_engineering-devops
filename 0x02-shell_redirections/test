@@ -1,0 +1,68 @@
+#!/bin/bash
+#13
+
+echo '#!/bin/bash' > 13-unique
+echo 'sort | uniq -u' >> 13-unique
+chmod u+x 13-unique
+
+#14
+
+echo '#!/bin/bash' > 14-findthatword
+echo 'grep root /etc/passwd' >> 14-findthatword
+chmod u+x 14-findthatword
+
+
+#15
+echo '#!/bin/bash' > 15-countthatword
+echo 'grep -c bin /etc/passwd' >> 15-countthatword
+
+chmod u+x 15-countthatword
+#16
+echo '#!/bin/bash' > 16-whatsnext
+echo 'grep -A 3 root /etc/passwd' >> 16-whatsnext
+chmod u+x 16-whatsnext
+#17
+echo '#!/bin/bash' > 17-hidethisword
+echo 'grep -v bin /etc/passwd' >> 17-hidethisword
+chmod u+x 17-hidethisword
+#!8
+echo '#!/bin/bash' > 18-letteronly
+echo 'grep '^[[:alpha:]]' /etc/ssh/sshd_config' >> 18-letteronly
+chmod u+x 18-letteronly
+#19
+echo '#!/bin/bash' > 19-AZ
+echo 'tr A Z | tr c e' >> 19-AZ
+chmod u+x 19-AZ
+
+#20
+echo '#!/bin/bash' > 20-hiago
+echo 'tr -d C | tr -d c' >> 20-hiago
+chmod u+x 20-hiago
+#21
+echo '#!/bin/bash' > 21-reverse
+echo 'rev' >> 21-reverse
+chmod u+x 21-reverse
+#22
+echo '#!/bin/bash' > 22-users_and_homes
+echo 'cut -d : -f 1,6 /etc/passwd | sort' >> 22-users_and_homes
+chmod u+x 22-users_and_homes
+
+echo '#!/bin/bash' > 100-empty_casks
+echo 'find . -empty -printf "%f\n"' >> 100-empty_casks
+chmod u+x 100-empty_casks
+
+echo '#!/bin/bash' > 101-gifs
+echo 'find . -name "*.gif" -type f -printf "%f\n" | rev |cut -d. -f2- | rev | LC_ALL=C sort -f' >> 101-gifs
+chmod u+x 101-gifs
+
+echo '#!/bin/bash' > 102-acrostic
+echo 'echo $(cut -c1 | tr -d " \n")' >> 102-acrostic
+chmod u+x 102-acrostic
+
+echo '#!/bin/bash' > 103-the_biggest_fan
+echo 'tail -n +2 | sort | cut -f1 | uniq -c | sort -g -r | head -11 | tr -s " " | cut -d" " -f3' >> 103-the_biggest_fan
+chmod u+x 103-the_biggest_fan
+
+git add .
+git commit -m "Batch shell redirections"
+git push
