@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# task 5
+echo '#!/bin/bash' >> 5-firstlines
+echo 'head /etc/passwd' >> 5-firstlines
+chmod u+x 5-firstlines
+
+# task 6
+echo '#!/bin/bash' >> 6-third_line
+echo 'head -n 3 /tmp/h/iacta | tail -n 1 ' >> 6-third_line
+chmod u+x 6-third_line
+
+
+
+
+
+
+
+# task 8
+echo '#!/bin/bash' >> 8-cwd_state
+echo 'ls -la > ls_cwd_content' >> 8-cwd_state
+chmod u+x 8-cwd_state
+
+# task 9
+echo '#!/bin/bash' >> 9-duplicate_last_line
+echo 'tail -1 < iacta >> iacta' >> 9-duplicate_last_line
+chmod u+x 9-duplicate_last_line
+
+git add .
+git commit -m "5 THROUGH 9"
+git push
